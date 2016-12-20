@@ -10,14 +10,20 @@ import { DatabaseService } from '../database/database.service';
 })
 export class ContactsListComponent implements OnInit {
 
+	contacts: Contact[];
   constructor(private dataService: DatabaseService) {
 	console.log("ContactsListComponent constructor");
   }
 
   ngOnInit() {
-	console.log("ContactsListComponent onNgInit", this.dataService.getContactsList());
-	//DatabaseService.getContactsList();
+	this.contacts = this.dataService.getContactsList();
+	console.log(this.contacts)
+	//this.dataService.getContactsList();
 	
   }
 
+  printData() {
+	console.log("TEST func");
+	var testVar = "some text";
+  }
 }

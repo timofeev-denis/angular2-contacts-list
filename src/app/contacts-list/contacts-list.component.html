@@ -1,3 +1,7 @@
-<p>
-  contacts-list works!
-</p>
+<div>
+<ul>
+	<li *ngFor="let item of contacts">{{item.name}}</li>
+</ul>
+
+  <button (click)="printData()">click test</button>
+</div>
